@@ -6,7 +6,7 @@ public class Cliente {
 	private Pets pet;
 	private String servicoData;
 	private String servicoHora;
-	private float valorDivida;
+	private double valorDivida;
 	private int servicoMarcado = 0;
 	private Servico servico;
 	
@@ -61,12 +61,12 @@ public class Cliente {
 		this.servicoMarcado = servicoMarcado;
 	}
 
-	public float getValorDivida() {
+	public double getValorDivida() {
 		return valorDivida;
 	}
 
-	public void setValorDivida(float valorDivida) {
-		this.valorDivida = valorDivida;
+	public void setValorDivida(double valorDivida) {
+		this.valorDivida = this.valorDivida + valorDivida;
 	}
 
 	public Servico getServico() {
@@ -83,8 +83,10 @@ public class Cliente {
 			return "Nao";
 		}
 	}
-	public void realizarServico() {
-		
+	public void realizarServico(Servico servico) {
+		double valor = servico.getValor();
+		setValorDivida(valor);
+		setServicoMarcado(0);
 	}
 	
 	

@@ -2,11 +2,11 @@ package br.com.petshop.classes;
 
 public class Servico {
 	private String servico;
-	private float valor;
+	private double valor;
 	
-	public Servico(String servico, float valor) {
+	public Servico(String servico, double d) {
 		this.setServico(servico);
-		this.valor = valor;
+		this.valor = d;
 	}
 	
 	public void setValor(float valor) {
@@ -15,11 +15,11 @@ public class Servico {
 		}
 	}
 	
-	private float valor() {
+	private double valor() {
 		return valor;
 	}
 	
-	public float getValor() {
+	public double getValor() {
 		return valor();
 	}
 
