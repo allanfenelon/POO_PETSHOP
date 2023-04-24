@@ -1,9 +1,10 @@
 package br.com.petshop.classes;
 
+import br.com.petshop.repositorios.RepoPets;
 
 public class Cliente {
 	private String nomeCliente;
-	private Pets pet;
+	private RepoPets pets = new RepoPets();
 	private String servicoData;
 	private String servicoHora;
 	private double valorDivida;
@@ -12,9 +13,8 @@ public class Cliente {
 	
 	
 	
-	public Cliente(String nomeCliente, Pets pet) {
+	public Cliente(String nomeCliente) {
 		this.setNomeCliente(nomeCliente);
-		this.setPet(pet);
 		this.setValorDivida(0);
 	}
 	
@@ -45,12 +45,12 @@ public class Cliente {
 		this.nomeCliente = nomeCliente;
 	}
 
-	public Pets getPet() {
-		return pet;
+	public RepoPets getPet() {
+		return this.pets;
 	}
 
 	public void setPet(Pets pet) {
-		this.pet = pet;
+		this.pets.setPets(pet);
 	}
 
 	public int getServicoMarcado() {
